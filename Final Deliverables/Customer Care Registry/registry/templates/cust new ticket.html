@@ -1,0 +1,22 @@
+{% extends 'cust dashboard.html' %}
+
+{% block title %}
+    New ticket
+{% endblock %}
+
+{% block right %}
+    <div class="profile-div">
+        <h1>Raise a new ticket</h1>
+        <div class="new-t-div">
+            <p>In case you have any issues, you can raise a new ticket with the detailed
+                description of the issue. An agent will be assigned for your ticket. And you will
+                receive expert answers
+            </p>
+            <form method="POST" action="{{ url_for('customer.new') }}">
+                <textarea name="query-box" class="ticket-area" maxlength="800" placeholder="Your Query..."></textarea>
+                <p>* Please make sure the query is legible</p>
+                <button type="submit" id="new-ticket" class="submit-btn" style="width: 200px;">New Ticket</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

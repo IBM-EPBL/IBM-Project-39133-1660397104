@@ -1,0 +1,20 @@
+{% extends 'agent dashboard.html' %}
+
+{% block title %}
+    Feedback
+{% endblock %}
+
+{% block right %}
+    <div class="profile-div">
+        <h1>Feedback</h1>
+
+        <div class="new-t-div">
+            <p>Your feedback is highly appreciated!</p>
+            <form method="POST" action="{{ url_for('agent.support') }}">
+                <textarea name="feed-box" class="ticket-area" maxlength="800" placeholder="Your Feedback..."></textarea>
+                <p>* Please make sure the feedback is constructive</p>
+                <button type="submit" id="new-ticket" class="submit-btn" style="width: 200px;">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

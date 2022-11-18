@@ -1,0 +1,56 @@
+{% extends 'dashboard.html' %}
+
+{% block left %}
+    <div class="links-left-div" onload="highlight()">
+        <ul id="dash-parent-list">
+            <li> 
+                <a href="{{ url_for('admin.tickets') }}">
+                    <div class="link-items">
+                        <div><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <h3>Tickets</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('admin.agents') }}">
+                    <div class="link-items">
+                        <div><i class="fa fa-user" aria-hidden="true"></i></div>
+                        <h3>Agents</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('admin.accept') }}">
+                    <div class="link-items">
+                        <div><i class="fa fa-question" aria-hidden="true"></i></div>
+                        <h3>Requests</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('admin.about') }}">
+                    <div class="link-items">
+                        <div><i class="fa fa-info" aria-hidden="true"></i></div>
+                        <h3>About</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('admin.support') }}">
+                    <div class="link-items">
+                        <div><i class="fa fa-comments-o" aria-hidden="true"></i></div>
+                        <h3>Feedback</h3>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        window.onload = function highlight(){
+            id = '{{ id }}'
+            var element = document.getElementById('dash-parent-list').children.item(id);
+            element.className = "active";
+        }
+    </script>
+{% endblock %}

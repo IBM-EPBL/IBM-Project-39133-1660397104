@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="dashboard-div">
+        <nav>
+            <div class="dash-nav">
+                <div>
+                    <div class="dash-img-text">
+                        <img src="../static/images/cart logo white-modified.png" class="img-in-nav" alt="logo"/>
+                        <h3>Customer Care Registry</h3>
+                    </div>
+                </div>
+                <div>
+                    <div class="online-div" onclick="showSettings()">
+                        {% if user == "AGENT" %}
+                            <img src="../static/images/agent.png" class="img-in-nav" alt="logo"/>
+                        {% elif user == "ADMIN" %}
+                            <img src="../static/images/admin.png" class="img-in-nav" alt="logo"/>
+                        {% else %}
+                            <img src="../static/images/cust profile.png" class="img-in-nav" alt="logo"/>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="dash-body">
+            <div class="dash-left">
+                {% block left %}
+                {% endblock %}
+            </div>
+            <div class="dash-right">
+                {% block right %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <div class="settings-menu" id="settings-menu" style="visibility: hidden;">
+            <div>
+                <p>Want to Logout?</p>
+                <a href="{{ url_for('blue_print.logout') }}">
+                    <button class="logout-btn" type="button">Logout</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSettings(){
+            var settings = document.getElementById("settings-menu");
+
+            settings.style.visibility = settings.style.visibility == "hidden" ? "visible" : "hidden";
+        }
+    </script>
+{% endblock %}
+

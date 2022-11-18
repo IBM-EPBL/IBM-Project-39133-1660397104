@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Address Column
+{% endblock %}
+
+{% block main %}
+    <div class="dashboard-div">
+        <nav>
+            <div class="dash-nav">
+                <div>
+                    <div class="dash-img-text">
+                        {% if user == "AGENT" %}
+                            <a href="{{ url_for('agent.assigned') }}">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            </a>
+                            <img src="{{ url_for('static', filename='images/cust profile.png') }}" class="img-in-nav" alt="logo"/>
+                        {% else %}
+                            <a href="{{ url_for('customer.tickets') }}">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            </a>
+                            <img src="{{ url_for('static', filename='images/agent.png') }}" class="img-in-nav" alt="logo"/>
+                        {% endif %}
+                        <h3>{{ name }}</h3>
+                    </div>
+                </div>
+                <div>
+                    <div style="align-items: center;">
+                        {% if value == "True" %}
+                            {% if user == "CUSTOMER" %}
+                                <a href="/customer/close/{{ id }}"><button class="logout-btn">CLOSE TICKET</button></a>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="chat-body">
+            <div class="chat-contents" id="content">
+                {% if msgs_to_show %}
+                    {% for chat in chats %}
+                        {% if chat['SENDER_ID'] == sender_id %}
+                            <div class="message-sent">{{ chat['MESSAGE'] }}</div>
+                        {% else %}
+                            <div class="message-sent received">{{ chat['MESSAGE'] }}</div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="chat-input-div">
+                {% if value == "True" %}
+                    <form method="POST" action="{{ post_url }}">
+                        <input name="message-box" class="chat-input" type="text" placeholder="Type something" required/>
+                        <button type="submit" class="chat-send">
+                            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                {% else %}
+                    <div>
+                        {% if user == "CUSTOMER" %}
+                            <h4>You closed this ticket. Chats are disabled</h4>
+                        {% else %}
+                            <h4>{{ name }} closed this ticket. Chats are disabled</h4>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

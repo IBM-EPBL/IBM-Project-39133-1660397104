@@ -1,0 +1,73 @@
+{% extends 'admin dashboard.html' %}
+
+{% block title %}
+    All Requests
+{% endblock %}
+
+{% block right %}
+    <div class="profile-div">
+        <h1>Pending Requests</h1>
+        <div class="new-t-div">
+            {% if agents_to_show %}
+                <p>{{ msg }}</p>
+                
+                <table class="agents-table">
+                    <tr>
+                        <th class="agents-table-heading">AGENT ID</th>
+                        <th class="agents-table-heading">EMAIL</th>
+                        <th class="agents-table-heading">FIRST NAME</th>
+                        <th class="agents-table-heading">JOINED <br/> DATE</th>
+                        <th class="agents-table-heading">ACCEPT?</th>
+                    </tr>
+                    {% for agent in agents %}
+                        <tr>
+                            <td class="agents-table-element">{{ agent[0][0:5] }}</td>
+                            <td class="agents-table-element">{{ agent[1] }}</td>
+                            <td class="agents-table-element">{{ agent[2] }}</td>
+                            <td class="agents-table-element">{{ agent[3] }}</td>
+                            <td class="agents-table-element">
+                                <div class="accept-close-div">
+                                    <div><i onclick="agree('{{ agent[1] }}')" class="fa fa-check agree" aria-hidden="true"></i></div>
+                                    <div><i onclick="deny('{{ agent[1] }}')" class="fa fa-times deny" aria-hidden="true"></i></div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <p>{{ msg }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function agree(email){
+            var decision = confirm("Do you want to accept the agent?")
+
+            if (decision){
+                url = '/admin/' + email + '/True'
+
+                fetch(url, {
+
+                }).then((_res) => {
+                    window.location.href = "/admin/accept"
+                })
+            }
+        }
+
+        function deny(email){
+            var decision = confirm('If you do not accept the agent, the agent will be deleted from the databse. Is it ok?')
+        
+            if(decision){
+                url = '/admin/' + email + '/False'
+
+                fetch(url, {
+
+                }).then((_res) => {
+                    window.location.href = "/admin/accept"
+                    console.log("Agent deleted")
+                })
+            }
+        }
+    </script>
+{% endblock %}

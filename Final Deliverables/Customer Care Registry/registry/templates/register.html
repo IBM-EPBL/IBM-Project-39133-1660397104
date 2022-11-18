@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <section class="register-section">
+        <div class="register-left">
+            <h1>Create your Registry Account</h1>
+
+            <form action="{{ url_for('blue_print.register') }}" method="POST">
+                <div class="reg-left-input-div">
+                    <div>
+                        <label>First Name</label>
+                        <input required type="text" value="{{ first_name }}" placeholder="First Name" name="first_name" />
+                    </div>
+                    <div>
+                        <label>Last Name</label>
+                        <input required type="text" value="{{ last_name }}" placeholder="Last Name" name="last_name" />
+                    </div>
+                </div>
+    
+                <div class="email-reg">
+                    <label>Email</label>
+                    <input required type="email" value="{{ email }}" placeholder="Your email address" name="email" />
+                    <p>This will be your Registry account email</p>
+                </div>
+    
+                <div class="role-div">
+                    <p>Role : </p>
+                    <div>
+                        <div style="margin-top: 0px;">
+                            <input type="radio" style="height: 20px;" value="Customer" checked name="role-check"/>
+                            <p>Customer</p>
+                        </div>
+                        <div style="margin-top: 0px;">
+                            <input type="radio" style="height: 20px;" value="Agent" name="role-check"/>
+                            <p>Agent</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="reg-left-input-div">
+                    <div>
+                        <label>Password</label>
+                        <input required type="password" id="password-input"  value="{{ password }}" placeholder="Password" name="password" />
+                    </div>
+                    <div>
+                        <label>Confirm Password</label>
+                        <input required type="password" id="password-input1"  value="{{ confirm_password }}" placeholder="Confirm password" name="confirm_password" />
+                    </div>
+                </div>
+                <p>Use 8 or more characters with a mix of just letters and numbers</p>
+    
+                <div class="show-pass-div">
+                    <input type="checkbox" onclick="showPassword()" name="show password check"/>
+                    <p>Show Password</p>
+                </div>
+    
+                <div class="sign-instead-div">
+                    <a href="{{ url_for('blue_print.login') }}" class="cust-link">Sign-in instead</a>
+                    <button type="submit" class="submit-btn submit-1">Register</button>
+                </div>
+            </form>
+        </div>
+        <div class="register-right">
+            <img src="{{ url_for('static', filename='images/cart logo white.png') }}" alt="logo"/>
+            <h1>Politeness goes far, yet costs nothing</h1>
+        </div>
+    </section>
+{% endblock %}

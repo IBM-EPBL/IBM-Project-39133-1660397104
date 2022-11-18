@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Enter the code
+{% endblock %}
+
+{% block main %}
+    <div class="bg-main-div">
+        <section class="login-section extra">
+            <div class="login-div">
+                <div class="login-header">
+                    <img src="{{ url_for('static', filename='images/cart logo white.png') }}" class="login-img" alt="logo" />
+                    <h2>Enter the code</h2>
+                    <p>Sent to your Registry Account</p>
+                </div>
+                <div class="login-remind">
+                    <form action="/forgot/{{role}}/{{email}}/{{sha}}/" method="POST" class="login-form">
+                        <label>Code</label>
+                        <input type="text" required name="code-input" placeholder="Enter your code"/>
+    
+                        <button class="submit-btn" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

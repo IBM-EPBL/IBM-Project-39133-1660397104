@@ -1,0 +1,27 @@
+{% extends 'cust dashboard.html' %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block right %}
+    <div class="profile-div">
+        <h1>About</h1>
+
+        <div class="new-t-div">
+            <p>You might as well know all these as a customer</p>
+
+            <div class="about-div">
+                <ul>
+                    <li>In case you have any doubts, you can create a new ticket.</li>
+                    <li>Explain your situation in the ticket legitimately.</li>
+                    <li>Admin assigns an agent soon for your ticket.</li>
+                    <li>You can chat with the agent to clarify your queries.</li>
+                    <li>Close the ticket once you are satisifed.</li>
+                </ul>
+
+                <a href="{{ url_for('customer.new') }}" class="submit-btn new-bol">Raise a new ticket</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

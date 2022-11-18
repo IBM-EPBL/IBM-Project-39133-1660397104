@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Welcome {{ agent.first_name }}!
+{% endblock %}
+
+{% block main %}
+    <div class="agent-no-show">
+        <form method="GET" action="{{ url_for('blue_print.logout') }}">
+            <img class="no-show-img" src="../static/images/cart logo white-modified.png" alt="logo"/>
+            <h2 class="no-show-header">Welcome agent, {{ agent.first_name }}</h2>
+            <p>It seems your account is not yet verified by the admin! So would you please login after a while.</p>
+            <button class="logout-btn" type="submit">LOGOUT</button>
+        </form>
+    </div>
+{% endblock %}

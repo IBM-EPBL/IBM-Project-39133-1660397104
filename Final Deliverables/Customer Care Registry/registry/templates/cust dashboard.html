@@ -1,0 +1,65 @@
+{% extends 'dashboard.html' %}
+
+{% block left %}
+    <div class="links-left-div">
+        <ul  id="dash-parent-list">
+            <li>
+                <a href="{{ url_for('customer.profile') }}">
+                    <div class="link-items">
+                        <div><i class="fa fa-user" aria-hidden="true"></i></div>
+                        <h3>Profile</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('customer.new') }}">
+                    <div class="link-items">
+                        <div><i class="fa fa-plus" aria-hidden="true"></i></div>
+                        <h3>New ticket</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('customer.tickets') }}">
+                    <div class="link-items">
+                        <div><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <h3>Tickets</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('customer.change') }}">
+                    <div class="link-items">
+                        <div><i class="fa fa-key" aria-hidden="true"></i></div>
+                        <h3>Change Password</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('customer.about') }}">
+                    <div class="link-items">
+                        <div><i class="fa fa-info" aria-hidden="true"></i></div>
+                        <h3>About</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('customer.support') }}">
+                    <div class="link-items">
+                        <div><i class="fa fa-comments-o" aria-hidden="true"></i></div>
+                        <h3>Feedback</h3>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        window.onload = function highlight(){
+            id = '{{ id }}'
+            var element = document.getElementById('dash-parent-list').children.item(id);
+            element.className = "active";
+            console.log("function called")
+        }
+    </script>
+{% endblock %}

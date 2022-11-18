@@ -1,0 +1,27 @@
+{% extends 'agent dashboard.html' %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block right %}
+<div class="profile-div">
+    <h1>About</h1>
+
+    <div class="new-t-div">
+        <p>You might as well know all these as an agent</p>
+
+        <div class="about-div">
+            <ul>
+                <li>Customers create ticket to clarify their queries.</li>
+                <li>Admin assigns some of the tickets to you.</li>
+                <li>Once assigned to you, you chat with the customer.</li>
+                <li>During the same, you can answer to the customer.</li>
+                <li>Customer closes the ticket once satisfied.</li>
+            </ul>
+
+            <a href="{{ url_for('agent.assigned') }}" class="submit-btn new-bol">Tickets assigned</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

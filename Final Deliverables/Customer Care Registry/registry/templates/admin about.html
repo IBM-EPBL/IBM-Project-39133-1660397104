@@ -1,0 +1,27 @@
+{% extends 'admin dashboard.html' %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block right %}
+<div class="profile-div">
+    <h1>About</h1>
+
+    <div class="new-t-div">
+        <p>You might as well know all these as an admin</p>
+
+        <div class="about-div">
+            <ul>
+                <li>Customers create ticket to clarify their queries.</li>
+                <li>As an admin, you have to assign those to the agents.</li>
+                <li>Agents will have a chat with the customers.</li>
+                <li>During the same, agents can answer to the customer.</li>
+                <li>Customer closes the ticket once satisfied.</li>
+            </ul>
+
+            <a href="{{ url_for('admin.tickets') }}" class="submit-btn new-bol">Unassigned tickets</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

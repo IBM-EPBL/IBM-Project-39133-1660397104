@@ -1,0 +1,748 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --nav-color: #212121;
+    --body-bg-color: white;
+    --online-green-color: #00FF00;
+    --white-color: white;
+    --black-color: black;
+    --link-color: blue;
+    --line-grey-color: #D3D3D3;
+    --input-bg-color: #efefef;
+    --nice-whole-bg: #454545;
+}
+
+body{
+    background-color: white;
+    min-height: 100%;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* ************************************************************************************** */
+.bg-main-div{
+    min-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+.login-section{
+    width: 40%;
+    padding: 100px 0;
+    margin: auto;
+}
+
+.extra {
+    padding: 150px 0;
+}
+
+.login-div{
+    width: 70%;
+    margin: 0 auto;
+    padding: 15px 0;
+    border: 1px solid var(--line-grey-color);
+    border-radius: 5%;
+}
+
+.login-header{
+    text-align: center;
+}
+
+.login-header h2, .no-show-header{
+    font-weight: 400;
+}
+
+.login-header p{
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.login-img, .no-show-img{
+    width: 100px;
+    text-align: center;
+}
+
+.login-form{
+    width: 70%;
+    margin: 10px auto;
+}
+
+label{
+    display: block;
+    margin-top: 15px;
+}
+
+.login-form input{
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: var(--input-bg-color);
+    border-radius: 3px;
+    font-size: 15px;
+    text-indent: 15px;
+}
+
+.role-div{
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+.role-div > p{
+    align-items: center;
+    align-self: center;
+}
+
+.role-div > div{
+    display: flex;
+    font-size: 16px;
+    margin-left: 10px;
+    align-items: center;
+    align-self: center;
+}
+
+.role-div > div > div{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    margin-right: 15px;
+    margin-top: -8px;
+}
+
+.role-div > div > div > input{
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.submit-btn{
+    width: 100%;
+    height: fit-content;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: var(--nav-color);
+    color: var(--white-color);
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.submit-btn:hover{
+    background-color: var(--online-green-color);
+    color: var(--black-color);
+}
+
+.login-form > div{
+    margin-top: 15px;
+}
+
+.login-form > div > div{
+    margin-top: 15px;
+}
+
+.links{
+    color: var(--link-color);
+    font-size: 15px;
+}
+
+/* ************************************************************************************* */
+.register-section{
+    width: 50%;
+    margin: 120px auto;
+    display: flex;
+    padding: 15px;
+    border: 1px solid var(--line-grey-color);
+    border-radius: 10px;
+}
+
+.register-left{
+    flex-basis: 60%;
+    padding: 15px;
+}
+
+.register-left h1{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.reg-left-input-div{
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.reg-left-input-div > div{
+    height: 40px;
+    flex-basis: 50%;
+    height: fit-content;
+}
+
+.reg-left-input-div > div > input, .email-reg > input{
+    width: 80%;
+    height: 45px;
+    margin-top: 5px;
+    text-indent: 8px;
+    font-size: 15px;
+    background-color: var(--input-bg-color);
+    border: none;
+}
+
+.register-left > .email-reg{
+    margin: 25px 0;
+}
+
+.email-reg > p, .register-left > form > p, .change-password-div > form > p{
+    margin: 5px 0;
+    font-size: 13px;
+    color: var(--nav-color);
+}
+
+
+.show-pass-div{
+    display: flex;
+    margin: 10px 0;
+}
+
+.show-pass-div > input{
+    width: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.show-pass-div > p{
+    font-size: 16px;
+}
+
+.sign-instead-div{
+    width: 95%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-1{
+    width: 100px;
+}
+
+.register-right{
+    flex-basis: 40%;
+    align-self: center;
+    text-align: center;
+}
+
+.register-right > img{
+    width: 250px;
+    margin-top: -20px;
+}
+
+.register-right > h1{
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: -20px;
+}
+
+.cust-link{
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-style: italic;
+    align-self: center;
+}
+
+/* *************************************************************************************** */
+.dashboard-div{
+    width: 65%;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    background-color: white;
+}
+
+nav, .details-nav{
+    width: 100%;
+    background-color: var(--nav-color);
+}
+
+.dash-nav{
+    background-color: var(--nav-color);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 50px;
+    align-items: center;
+}
+
+.img-in-nav{
+    width: 50px;
+}
+
+.dash-img-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+}
+
+.dash-img-text > a{
+    text-decoration: none;
+    color: white;
+}
+
+.dash-img-text > a > i{
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.dash-img-text > h3{
+    color: white;
+    font-size: 20px;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.online-div{
+    position: relative;
+}
+
+.settings-menu{
+    position: absolute;
+    width: 200px;
+    height: fit-content;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    top: 100px;
+    right: 0%;
+    padding: 15px;
+    z-index: 3;
+}
+
+.logout-btn{
+    width: 100%;
+    margin: 10px auto;
+    background-color: var(--nav-color);
+    color: white;
+    font-size: 17px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.logout-btn:hover{
+    background-color: red;
+}
+
+.online-div::after{
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--online-green-color);
+    border: 2px solid var(--white-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.dash-body{
+    width: 100%;
+    display: flex;
+}
+
+.dash-left{
+    flex-basis: 30%;
+    min-height: calc(100vh - 90px);
+}
+
+.dash-right{
+    flex-basis: 70%;
+    min-height: calc(100vh - 90px);
+}
+
+.links-left-div{
+    margin: 20px;
+    cursor: pointer;
+}
+
+.links-left-div > ul{
+    list-style: none;
+}
+
+.links-left-div > ul li{
+    padding: 15px 0;
+    color: black;
+}
+
+.links-left-div > ul li:hover{
+    background-color: #f2f2f2;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.active{
+    background-color: var(--line-grey-color);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.links-left-div > ul > li > a{
+    text-decoration: none;
+    color: black;
+}
+
+.link-items{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.link-items > div{
+    flex-basis: 13%;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.link-items > div > i{
+    font-size: 25px;
+}
+
+.link-items > h3{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.profile-div{
+    margin: 50px;
+    position: relative;
+}
+
+.prof-table {
+    width: 70%;
+    cursor: pointer;
+}
+
+.prof-table-th{
+    border: 1px solid #ddd;
+    padding: 15px;
+    color: white;
+    background-color: var(--nav-color);
+}
+
+.prof-table, .prof-table td{
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-collapse: collapse;
+    font-size: 18px;
+}
+
+.prof-table tr:nth-child(odd){
+    background-color: #f2f2f2;
+}
+
+.prof-table tr:hover{
+    background-color: #ddd;
+}
+
+.new-t-div{
+    margin-top: 20px;
+}
+
+.new-t-div > p{
+    font-size: 19px;
+    max-width: 90%;
+    line-height: 1.5;
+    color: grey;
+}
+
+.new-t-div > form > p{
+    color: red;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.ticket-area{
+    width: 90%;
+    height: 200px;
+    margin-top: 15px;
+    text-indent: 10px;
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+    border: 1px solid var(--nav-color);
+    border-radius: 10px;
+}
+
+.agent-no-show{
+    width: 50%;
+    margin: 150px auto;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid var(--line-grey-color);
+    border-radius: 10px;
+}
+
+.agent-no-show > form > p{
+    color: red;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.agent-no-show > form > button{
+    width: 250px;
+}
+
+
+
+.agents-table{
+    border-collapse: collapse;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.agents-table tr:hover{
+    background-color: #ddd;
+}
+
+
+.agents-table-heading, .agents-table-element{
+    padding: 15px;
+    text-align: center;
+    border: #ddd;
+}
+
+.agents-table-heading{
+    color: white;
+    background-color: var(--nav-color);
+}
+
+.agents-table tr:nth-child(odd){
+    background-color: #f2f2f2;
+}
+
+.accept-close-div{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.accept-close-div > div{
+    text-align: center;
+}
+
+.accept-close-div > div > i{
+    font-size: 20px;
+    color: var(--nav-color);
+}
+
+.agree:hover{
+    color: #00FF00;
+    font-size: 25px;
+}
+
+.deny:hover{
+    color: red;
+    font-size: 25px;
+}
+
+.open-ticket{
+    padding: 5px;
+    color: black;
+    background-color: var(--online-green-color);
+    border: none;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.closed-ticket{
+    background-color: red;
+    color: white;
+}
+
+.view-query{
+    border: none;
+    color: blue;
+    background-color: none;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.agent-select{
+    width: 100px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.change-password-div{
+    margin-top: 15px;
+}
+
+.change-pass-in{
+    width: 50%;
+    height: 50px;
+    margin-top: 5px;
+    text-indent: 10px;
+    font-size: 15px;
+    border: none;
+    background-color: var(--input-bg-color);
+}
+
+.chat-body{
+    width: 100%;
+    min-height: calc(100vh - 90px);
+    background-color: #eee;
+}
+
+.chat-input-div{
+    width: 50%;
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.chat-input-div > form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #5A5A5A;
+    border-radius: 15px;
+    align-items: center;
+    align-self: center;
+}
+
+.chat-input-div > div{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.chat-input{
+    width: 86%;
+    height: 50px;
+    border: none;
+    font-size: 16px;
+    text-indent: 10px;
+    background-color: #212121;
+    color: white;
+    max-height: 50px;
+    border-radius: 8px;
+}
+
+.chat-send{
+    width: 10%;
+    color: white;
+    position: relative;
+    height: 50px;
+    background-color: var(--nav-color);
+    border-radius: 100%;
+    cursor: pointer;
+    border: none;
+}
+
+.chat-send > i{
+    position: absolute;
+    top: 50%;
+    font-size: 25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chat-contents{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    height: calc(100vh - 185px);
+    overflow-y: scroll;
+}
+
+.message-sent{
+    background-color: #00FF00;
+    color: var(--nav-color);
+    font-size: 16px;
+    padding: 15px 10px;
+    width: fit-content;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.received{
+    background-color: #147efb;
+    margin-left: 0;
+    margin-right: auto;
+    color: white;
+}
+
+.about-div{
+    margin: 10px 0;
+}
+
+.about-div > ul{
+    list-style-type: square;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+.about-div > ul > li{
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.about-div > ul > li:last-child{
+    margin-bottom: 40px;
+}
+
+.new-bol{
+    text-decoration: none;
+    width: 200px;
+}
+
+.feed-div{
+    margin-top: 15px;
+}
+
+.feedback-column{
+    padding: 20px;
+    width: 70%;
+    max-width: 70%;
+    border: 1px double var(--nav-color);
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.feedback-text{
+    font-size: 20px;
+    font-weight: 500;
+    max-width: 100%;
+}
+
+.feedback-by{
+    margin-top: 10px;
+    color: #808080;
+}

@@ -1,0 +1,64 @@
+{% extends 'agent dashboard.html' %}
+
+{% block title %}
+    Tickets Assigned
+{% endblock %}
+
+{% block right %}
+    <div class="profile-div">
+        <h1>Tickets assigned to you!</h1>
+        
+        <div class="new-t-div">
+            {% if tickets_to_show %}
+                <p>{{ msg }}</p>
+                <table class=agents-table>
+                    <tr>
+                        <th class="agents-table-heading">TICKET ID</th>
+                        <th class="agents-table-heading">DATE</th>
+                        <th class="agents-table-heading">RAISED <br/> BY</th>
+                        <th class="agents-table-heading">STATUS</th>
+                        <th class="agents-table-heading">QUERY</th>
+                        <th class="agents-table-heading">ADDRESS <br/> COLUMN</th>
+                    </tr>
+                    {% for ticket in tickets %}
+                        <tr>
+                            <td class="agents-table-element">{{ ticket[0][0:5] }}</td>
+                            <td class="agents-table-element">{{ ticket[1] }}</td>
+                            <td class="agents-table-element">{{ ticket[2] }}</td>
+                            <td class="agents-table-element">
+                                {% if ticket[3] == "OPEN" %}
+                                    <div class="open-ticket">
+                                        {{ ticket[3] }}
+                                    </div>
+                                {% else %}
+                                    <div class="open-ticket closed-ticket">
+                                        {{ ticket[3] }}
+                                    </div>
+                                {% endif %}
+                            </td>
+                            <td class="agents-table-element">
+                                <button onclick="showTicket('{{ ticket[4] }}')" class="view-query">View</button>
+                            </td>
+                            <td class="agents-table-element">
+                                {% if ticket[3] == "OPEN" %}
+                                    <a href="/chat/{{ ticket[0] }}/ {{ ticket[2] }}/" class="view-query">Chat</a>
+                                {% else %}
+                                    <a href="/chat/{{ ticket[0] }}/ {{ ticket[2] }}/" class="view-query">Visit</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <p>{{ msg }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        /* Function to show the query of the ticket */
+        function showTicket(ticket){
+            alert(ticket)
+        }
+    </script>
+{% endblock %}

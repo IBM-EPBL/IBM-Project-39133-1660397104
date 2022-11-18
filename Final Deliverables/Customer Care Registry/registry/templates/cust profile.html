@@ -1,0 +1,36 @@
+{% extends 'cust dashboard.html' %}
+
+{% block title %}
+    Welcome {{ customer.first_name }}
+{% endblock %}
+
+{% block right %}
+    <div class="profile-div">
+        <h1>Welcome to CCR!</h1>
+        <table class="prof-table">
+            <tr>
+                <th colspan="2" class="prof-table-th">Profile</th>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td>{{ customer.first_name }}</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>{{ customer.last_name }}</td>
+            </tr>
+            <tr>
+                <td>Role</td>
+                <td>Customer</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ customer.email }}</td>
+            </tr>
+            <tr>
+                <td>Date joined</td>
+                <td>{{ customer.date }}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

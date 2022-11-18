@@ -1,0 +1,36 @@
+{% extends 'agent dashboard.html' %}
+
+{% block title %}
+    Welcome {{ agent.first_name }}!
+{% endblock %}
+
+{% block right %}
+    <div class="profile-div">
+        <h1>Welcome to CCR!</h1>
+        <table class="prof-table">
+            <tr>
+                <th colspan="2" class="prof-table-th">Profile</th>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td>{{ agent.first_name }}</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>{{ agent.last_name }}</td>
+            </tr>
+            <tr>
+                <td>Role</td>
+                <td>Agent</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ agent.email }}</td>
+            </tr>
+            <tr>
+                <td>Date joined</td>
+                <td>{{ agent.date }}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

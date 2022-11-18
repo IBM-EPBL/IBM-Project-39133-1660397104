@@ -1,0 +1,37 @@
+{% extends 'cust dashboard.html' %}
+
+{% block title %}
+    Change Password
+{% endblock %}
+
+{% block right %}
+    <div class="profile-div">
+        <h1>Change Password</h1>
+
+        <div class="new-t-div">
+            <p>Feeling your old password is not good enough?</p>
+            
+            <div class="change-password-div">
+                <form action="{{ url_for('customer.change') }}" method="POST">
+                    <label>Password</label>
+                    <input name="password" class="change-pass-in" id="password-input" type="password" placeholder="Current Password" />
+    
+                    <label>New Password</label>
+                    <input name="new-pass-1" class="change-pass-in" id="password-input1" type="password" placeholder="New Password" />
+    
+                    <label>Confirm Password</label>
+                    <input name="new-pass-2" class="change-pass-in" id="password-input2" type="password" placeholder="New Password" /> <br/>
+                    
+                    <p>Use 8 or more characters with a mix of just letters and numbers</p>
+
+                    <div class="show-pass-div">
+                        <input type="checkbox" onclick="showPassword()" style="height: 20px;"/>
+                        <p>Show Password</p>
+                    </div>
+                    
+                    <button style="width: 150px;" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

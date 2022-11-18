@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Forgot Password?
+{% endblock %}
+
+{% block main %}
+    <div class="bg-main-div">
+        <section class="login-section extra">
+            <div class="login-div">
+                <div class="login-header">
+                    <img src="{{ url_for('static', filename='images/cart logo white.png') }}" class="login-img" alt="logo" />
+                    <h2>Forgot Password?</h2>
+                    <p>Use your Registry Account</p>
+                </div>
+                <div class="login-remind">
+                    <form action="{{ url_for('blue_print.forgot') }}" method="POST" class="login-form">
+                        <label>Email</label>
+                        <input type="email" required name="email" placeholder="Enter your email"/>
+                        
+                        <div class="role-div">
+                            <p>Role : </p>
+                            <div>
+                                <div>
+                                    <input type="radio" style="height: 20px;" value="Customer" checked name="role-check"/>
+                                    <p>Customer</p>
+                                </div>
+                                <div>
+                                    <input type="radio" style="height: 20px;" value="Agent" name="role-check"/>
+                                    <p>Agent</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <button class="submit-btn" type="submit">Get Code</button>
+    
+                        <div>
+                            <a href="{{ url_for('blue_print.login') }}" class="links">Signin instead</a> <br> 
+                            <div>
+                                <a href="{{ url_for('blue_print.register') }}" class="links">Don't have an account yet? Register</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

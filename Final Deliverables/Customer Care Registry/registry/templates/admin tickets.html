@@ -1,0 +1,73 @@
+{% extends 'admin dashboard.html' %}
+
+{% block title %}
+    All tickets
+{% endblock %}
+
+{% block right %}
+    <div class="profile-div">
+        <h1>Unassigned Tickets</h1>
+
+        <div class="new-t-div">
+            {% if tickets_to_show %}
+                <p>{{ msg }}</p>
+                <table class="agents-table">
+                    <tr>
+                        <th class="agents-table-heading">TICKET ID</th>
+                        <th class="agents-table-heading">DATE</th>
+                        <th class="agents-table-heading">CUSTOMER</th>
+                        <th class="agents-table-heading">QUERY</th>
+                        <th class="agents-table-heading">ASSIGN</th>
+                    </tr>
+                    {% for ticket in tickets %}
+                        <tr>
+                            <td class="agents-table-element">{{ ticket[0][0:5] }}</td>
+                            <td class="agents-table-element">{{ ticket[1] }}</td>
+                            <td class="agents-table-element">{{ ticket[2] }}</td>
+                            <td class="agents-table-element">
+                                <button onclick="showTicket('{{ ticket[3] }}')" class="view-query">View</button>
+                            </td>
+                            <td class="agents-table-element">
+                                <select class="agent-select" id="for-customer" onclick="agentSelected()" > 
+                                    <option class="agent-option" selected value="Choose">Choose</option>
+                                    {% for agent in agents %}
+                                        <option class="agent-option" value="{{ agent[1] }} {{ ticket[0] }} {{ ticket[4] }}">{{ agent[0] }}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <p>{{ msg }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function showTicket(ticket){
+            alert(ticket)
+        }
+
+        function agentSelected(){
+            var x = document.getElementById('for-customer').value;
+            console.log(x)
+
+            if (x != "Choose"){
+                var decision = confirm("Are you sure you want to assign this agent?")
+                const temp = x.split(" ")
+                console.log(temp)
+
+                if(decision){
+                    url = '/admin/update/' + temp[0] + '/' + temp[1] + '/' + temp[2] + '/'
+                    
+                    fetch(url, {
+
+                    }).then((_res) => {
+                        window.location.href = "/admin/tickets"
+                    })
+                }
+            }
+        }
+    </script>
+{% endblock %}

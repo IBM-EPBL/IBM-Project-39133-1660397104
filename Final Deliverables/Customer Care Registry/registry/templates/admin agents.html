@@ -1,0 +1,37 @@
+{% extends 'admin dashboard.html' %}
+
+{% block title %}
+    All Agents
+{% endblock %}
+
+{% block right %}
+    <div class="profile-div">
+        <h1>All Agents</h1>
+
+        <div class="new-t-div">
+            {% if agents_to_show %}
+                <p>{{ msg }}</p>
+                <table class="agents-table">
+                    <tr>
+                        <th class="agents-table-heading">AGENT ID</th>
+                        <th class="agents-table-heading">JOINED DATE</th>
+                        <th class="agents-table-heading">FIRST NAME</th>
+                        <th class="agents-table-heading">LAST NAME</th>
+                        <th class="agents-table-heading">EMAIL</th>
+                    </tr>
+                    {% for agent in agents %}
+                        <tr>
+                            <td class="agents-table-element">{{ agent[0][0:5] }}</td>
+                            <td class="agents-table-element">{{ agent[1] }}</td>
+                            <td class="agents-table-element">{{ agent[2] }}</td>
+                            <td class="agents-table-element">{{ agent[3] }}</td>
+                            <td class="agents-table-element">{{ agent[4] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <p>{{ msg }}</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'admin dashboard.html' %}
+
+{% block title %}
+    Feedbacks
+{% endblock %}
+
+{% block right %}
+    <div class="profile-div">
+        <h1>Feedbacks received!</h1>
+
+        <div class="new-t-div">
+            {% if true %}
+                <p>{{ msg }}</p>
+                <div class="feed-div">
+                    {% for feedback in feedbacks %}
+                        <div class="feedback-column">
+                            <p class="feedback-text">"{{ feedback[3] }}"</p>
+                            <p class="feedback-by">By {{ feedback[2] }} ({{ feedback[1] }})</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>{{ msg }}</p>
+            {% endif %}            
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,1 @@
+docker pull balaabineshsurya/customer-care-registry
