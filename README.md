@@ -26,7 +26,7 @@
 * SQL
 * HTML, Javascript
 * IBM Cloud
-* Kubernetes
+* Docker
 
 
 <h3>Overview</h3>
